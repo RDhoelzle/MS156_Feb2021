@@ -22,13 +22,13 @@ bargraph.CI(x.factor = Group, response = Chao1, group = Group, legend=TRUE, data
 bargraph.CI(x.factor = Group, response = Shan, group = Group, legend=TRUE, data=env.all)
 bargraph.CI(x.factor = Group, response = PD, group = Group, legend=TRUE, data=env.all)
 
-for(i in colnames(env.all[,8:11])) {
+for(i in colnames(env.all[,9:12])) {
   print(i)
   print(summary(aov(env.all[,i] ~ env.all$Group)))
 }
 
 
-for(i in colnames(env.all[,8:11])) {
+for(i in colnames(env.all[,9:12])) {
   print(i)
   print(cld(lsmeans(aov(env.all[,i] ~ Group, data= env.all), 
                     ~ Group, 
