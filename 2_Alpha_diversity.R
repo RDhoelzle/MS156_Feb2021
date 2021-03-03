@@ -2,15 +2,61 @@
 
 source("Functions.R")
 
-# Is the MB significantly different between all groups
-anova(lm(Sobs ~ factor(Group), data=env.all))
-bargraph.CI(x.factor = Group, response = Sobs, legend=TRUE, data=env.all)
-anova(lm(Chao1 ~ factor(Group), data=env.all))
-bargraph.CI(x.factor = Group, response = Chao1, legend=TRUE, data=env.all)
-anova(lm(Shan ~ factor(Group), data=env.all))
-bargraph.CI(x.factor = Group, response = Shan, legend=TRUE, data=env.all)
-anova(lm(PD ~ factor(Group), data=env.all))
-bargraph.CI(x.factor = Group, response = PD, legend=TRUE, data=env.all)
+# Q1: Is the MB sig dif amung smoker groups
+anova(lm(Sobs ~ factor(Group), data=env1))
+bargraph.CI(x.factor = Group, response = Sobs, legend=TRUE, data=env1)
+anova(lm(Chao1 ~ factor(Group), data=env1))
+bargraph.CI(x.factor = Group, response = Chao1, legend=TRUE, data=env1)
+anova(lm(Shan ~ factor(Group), data=env1))
+bargraph.CI(x.factor = Group, response = Shan, legend=TRUE, data=env1)
+anova(lm(PD ~ factor(Group), data=env1))
+bargraph.CI(x.factor = Group, response = PD, legend=TRUE, data=env1)
+## Additional analyses
+summary(aov(env1$Shan ~ env1$Group))
+cld(lsmeans(aov(env1$Shan ~ Group, data= env1), ~ Group, Letters = letters, adjust = "tukey"))
+
+# Q2: Does smoking cause sig dif MB at 12W
+anova(lm(Sobs ~ factor(Group), data=env2))
+bargraph.CI(x.factor = Group, response = Sobs, legend=TRUE, data=env2)
+anova(lm(Chao1 ~ factor(Group), data=env2))
+bargraph.CI(x.factor = Group, response = Chao1, legend=TRUE, data=env2)
+anova(lm(Shan ~ factor(Group), data=env2))
+bargraph.CI(x.factor = Group, response = Shan, legend=TRUE, data=env2)
+anova(lm(PD ~ factor(Group), data=env2))
+bargraph.CI(x.factor = Group, response = PD, legend=TRUE, data=env2)
+## Additional analyses
+summary(aov(env2$Shan ~ env2$Group))
+cld(lsmeans(aov(env2$Shan ~ Group, data= env2), ~ Group, Letters = letters, adjust = "tukey"))
+
+# Q3: Does smoking and DP2 cause sig dif MB at 14W
+anova(lm(Sobs ~ factor(Group), data=env3))
+bargraph.CI(x.factor = Group, response = Sobs, legend=TRUE, data=env3)
+anova(lm(Chao1 ~ factor(Group), data=env3))
+bargraph.CI(x.factor = Group, response = Chao1, legend=TRUE, data=env3)
+anova(lm(Shan ~ factor(Group), data=env3))
+bargraph.CI(x.factor = Group, response = Shan, legend=TRUE, data=env3)
+anova(lm(PD ~ factor(Group), data=env3))
+bargraph.CI(x.factor = Group, response = PD, legend=TRUE, data=env3)
+## Additional analyses
+summary(aov(env3$Shan ~ env3$Group))
+cld(lsmeans(aov(env3$Shan ~ Group, data= env3), ~ Group, Letters = letters, adjust = "tukey"))
+
+# Q4: Is the MB sig dif amung non-smoker groups
+anova(lm(Sobs ~ factor(Group), data=env4))
+bargraph.CI(x.factor = Group, response = Sobs, legend=TRUE, data=env4)
+anova(lm(Chao1 ~ factor(Group), data=env4))
+bargraph.CI(x.factor = Group, response = Chao1, legend=TRUE, data=env4)
+anova(lm(Shan ~ factor(Group), data=env4))
+bargraph.CI(x.factor = Group, response = Shan, legend=TRUE, data=env4)
+anova(lm(PD ~ factor(Group), data=env4))
+bargraph.CI(x.factor = Group, response = PD, legend=TRUE, data=env4)
+## Additional analyses
+summary(aov(env4$Shan ~ env4$Group))
+cld(lsmeans(aov(env4$Shan ~ Group, data= env4), ~ Group, Letters = letters, adjust = "tukey"))
+
+# Q5: How does MB develop w/ smoke exposure (b-diversity and heatmap)
+
+# Q6: How does MB develop w/ smoke and DP2 exposure (b-diversity and heatmap)
 
 ## Additional analyses
 

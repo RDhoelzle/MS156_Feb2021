@@ -1,4 +1,4 @@
-### Nestle 16S analyses 
+### Mahfuz MS165 16S analyses 
 
 # Paul Dennis and Rob Hoelzle Feb 2021
 
@@ -38,9 +38,24 @@ rm(otu.tmp) # tidy up
 
 #Subset to questions
 
-#env1 <- env[env$Q1 == 1,]
+env1 <- env.all[env.all$Q1 == 1,]
+env2 <- env.all[env.all$Q2 == 1,]
+env3 <- env.all[env.all$Q3 == 1,]
+env4 <- env.all[env.all$Q4 == 1,]
+env5 <- env.all[env.all$Q5 == 1,]
+env6 <- env.all[env.all$Q6 == 1,]
 
-#otu1 <- otu[env$Q1 == 1,]
+otu1 <- otu.all[env.all$Q1 == 1,]
+otu2 <- otu.all[env.all$Q2 == 1,]
+otu3 <- otu.all[env.all$Q3 == 1,]
+otu4 <- otu.all[env.all$Q4 == 1,]
+otu5 <- otu.all[env.all$Q5 == 1,]
+otu6 <- otu.all[env.all$Q6 == 1,]
 
-#w_unifrac1 <- w_unifrac[env$Q1 == 1,env$Q1 == 1]
+w_unifrac1 <- w_unifrac.all[env.all$Q1 == 1,env.all$Q1 == 1]
+w_unifrac2 <- w_unifrac.all[env.all$Q2 == 1,env.all$Q2 == 1]
+w_unifrac3 <- w_unifrac.all[env.all$Q3 == 1,env.all$Q3 == 1]
+w_unifrac4 <- w_unifrac.all[env.all$Q4 == 1,env.all$Q4 == 1]
+w_unifrac5 <- w_unifrac.all[env.all$Q5 == 1,env.all$Q5 == 1]
+w_unifrac6 <- w_unifrac.all[env.all$Q6 == 1,env.all$Q6 == 1]
 
