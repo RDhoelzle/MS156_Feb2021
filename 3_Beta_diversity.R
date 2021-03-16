@@ -50,4 +50,82 @@ adonis(sqrt(otu6) ~ Group, data=env6, method='euc')
   rda6 <- rda(sqrt(otu6) ~ env6$Group)
     custom.plot.rda(ord = rda6, group = factor(env6$Group), 
                     title = "Q6", plottype = "n", sd.val = 10, scaling.val = 3)
-    
+
+# Indicator analysis
+otu.indicators <- indval(otu.all, env.all$Group)
+
+levels(factor(env.all$Group))
+summary(otu.indicators, p=0.05, type="short")
+
+#Non.smoker.12W
+bargraph.CI(env.all$Group, otu.all[,'Otu37']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu31']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu27']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu232']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu269']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu332']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu73']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu409']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu345']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu126']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu241']*100)
+
+#Non.smoker.14W
+bargraph.CI(env.all$Group, otu.all[,'Otu205']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu228']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu302']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu221']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu390']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu145']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu59']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu283']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu188']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu115']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu239']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu244']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu265']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu268']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu312']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu267']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu3']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu36']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu231']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu110']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu303']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu214']*100)
+
+#Non.smoker.6W
+bargraph.CI(env.all$Group, otu.all[,'Otu6']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu453']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu51']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu289']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu17']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu383']*100)
+
+#Smoker.12W
+bargraph.CI(env.all$Group, otu.all[,'Otu382']*100)
+
+#Smoker.14W
+bargraph.CI(env.all$Group, otu.all[,'Otu22']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu234']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu351']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu8']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu317']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu169']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu352']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu410']*100)
+
+#Smoker.14W.DP2
+bargraph.CI(env.all$Group, otu.all[,'Otu87']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu139']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu425']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu206']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu123']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu147']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu319']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu104']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu55']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu227']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu292']*100)
+bargraph.CI(env.all$Group, otu.all[,'Otu137']*100)
+

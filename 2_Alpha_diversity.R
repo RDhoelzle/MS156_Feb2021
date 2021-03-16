@@ -82,6 +82,33 @@ for(i in colnames(env.all[,9:12])) {
                     adjust = "tukey")))
 }
 
+##ANOVA on all OTUs through all groups
+otu.taxa <- otu.all
+otu.taxa$Group <- env.all$Group
 
+
+tukey_log <- file('../Log/otus_by_group_tukey.log')
+sink(tukey_log, append = TRUE)
+sink(tukey_log, append = TRUE, type = "message")
+
+for(i in colnames(otu.taxa[,1:461])) {
+  print(i)
+  print(taxonomy[i,]$taxonomy)
+  print(summary(aov(otu.taxa[,i] ~ otu.taxa$Group)))
+}
+
+print('tukey')
+
+for(i in colnames(otu.taxa[,1:461])) {
+  print(i)
+  print(taxonomy[i,]$taxonomy)
+  print(cld(lsmeans(aov(otu.taxa[,i] ~ Group, data= otu.taxa), 
+                    ~ Group, 
+                    Letters = letters, 
+                    adjust = "tukey")))
+}
+
+sink()
+sink(type = "message")
 
 

@@ -72,3 +72,4 @@ pal <- colorRampPalette(c("white","black"))(100)
                            gaps_col = c(13,22),
                            gaps_row = c(1,15))
   
+  
