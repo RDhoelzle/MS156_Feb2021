@@ -2,9 +2,6 @@
 
 source("Functions.R")
 
-# Set color palette
-pal <- colorRampPalette(c("white","black"))(100)
-
 # How does MB develop in non-smokers (Q4)
   # Transpose otu table, set columns to label, rows to taxonomy, and order by taxonomy
   otu4.heatmap <- otu4

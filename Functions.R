@@ -4,7 +4,7 @@
 # |  _|| |_| | | | | (__| |_| | (_) | | | \__ \
 # |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
 #
-# Paul Dennis 
+# Paul Dennis and Rob Hoelzle
 
 library(vegan)
 library(sciplot)
@@ -15,6 +15,10 @@ library(corrplot)
 library(mvabund)
 library(pheatmap)
 library(RColorBrewer)
+library(labdsv)
+
+# Set heatmap color palet
+pal <- colorRampPalette(c("white","black"))(100)
 
 ## Axis percent 
 # Returns the percentage varation on ordination axes
