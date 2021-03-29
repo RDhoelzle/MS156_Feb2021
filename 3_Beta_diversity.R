@@ -3,13 +3,13 @@
 source("Functions.R")
 
 
-# Q1: Is the MB sig dif amung smoker groups
+# Q1: Is the MB sig dif among smoker groups
 adonis(sqrt(otu1) ~ Group, data=env1, method='euc')
   #pcoa <- pcoa(otu.all)
     #custom.plot.pcoa(pcoa,group = factor(env1$Group), plottype = "n", title = "all")
   rda1 <- rda(sqrt(otu1) ~ env1$Group)
     custom.plot.rda(ord = rda1, group = factor(env1$Group), 
-                    title = "Q2", plottype = "n", sd.val = 10, scaling.val = 3)
+                    title = "Q1", plottype = "n", sd.val = 10, scaling.val = 3)
 
 # Q2: Does smoking cause sig dif MB at 12W
 adonis(sqrt(otu2) ~ Group, data=env2, method='euc')
@@ -27,7 +27,7 @@ adonis(sqrt(otu3) ~ Group, data=env3, method='euc')
     custom.plot.rda(ord = rda3, group = factor(env3$Group), 
                     title = "Q3", plottype = "n", sd.val = 10, scaling.val = 3)
     
-# Q4: Is the MB sig dif amung non-smoker groups
+# Q4: Is the MB sig dif among non-smoker groups
 adonis(sqrt(otu4) ~ Group, data=env4, method='euc')
   #pcoa2 <- pcoa(otu2)
     #custom.plot.pcoa(pcoa2,group = factor(env2$Group), plottype = "n", title = "Q2")
@@ -50,6 +50,14 @@ adonis(sqrt(otu6) ~ Group, data=env6, method='euc')
   rda6 <- rda(sqrt(otu6) ~ env6$Group)
     custom.plot.rda(ord = rda6, group = factor(env6$Group), 
                     title = "Q6", plottype = "n", sd.val = 10, scaling.val = 3)
+    
+# Q7: How does MB compare after 14W smoke and/or DP2 exposure (b-diversity and heatmap)
+adonis(sqrt(otu7) ~ Group, data=env7, method='euc')
+  #pcoa2 <- pcoa(otu2)
+    #custom.plot.pcoa(pcoa2,group = factor(env2$Group), plottype = "n", title = "Q2")
+  rda7 <- rda(sqrt(otu7) ~ env7$Group)
+    custom.plot.rda(ord = rda7, group = factor(env7$Group), 
+                    title = "Q7", plottype = "n", sd.val = 10, scaling.val = 3)
 
 # Indicator analysis
 otu.indicators <- indval(otu.all, env.all$Group)

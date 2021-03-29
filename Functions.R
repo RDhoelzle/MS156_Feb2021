@@ -16,6 +16,7 @@ library(mvabund)
 library(pheatmap)
 library(RColorBrewer)
 library(labdsv)
+library(tidyr)
 
 # Set heatmap color palet
 pal <- colorRampPalette(c("white","black"))(100)

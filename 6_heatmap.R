@@ -37,11 +37,11 @@ source("Functions.R")
   
   # Remove low count otus
   nrow(otu5.heatmap)
-  otu5.heatmap <- otu5.heatmap[which(apply(otu5.heatmap,1,max)>=0.05),]
-  nrow(otu5.heatmap)
+  otu5.heatmap.f <- otu5.heatmap[which(apply(otu5.heatmap,1,max)>=0.05),]
+  nrow(otu5.heatmap.f)
   
   # Plot otu heatmap
-  heatmap.otu5 <- pheatmap(sqrt(otu5.heatmap), color = pal, border_color = "black",
+  heatmap.otu5 <- pheatmap(sqrt(otu5.heatmap.f), color = pal, border_color = "black",
                            cluster_rows = F, cluster_cols = F, fontsize = 10,
                            gaps_col = c(13,22),
                            gaps_row = c(1,15))
@@ -60,13 +60,33 @@ source("Functions.R")
   
   # Remove low count otus
   nrow(otu6.heatmap)
-  otu6.heatmap <- otu6.heatmap[which(apply(otu6.heatmap,1,max)>=0.05),]
-  nrow(otu6.heatmap)
+  otu6.heatmap.f <- otu6.heatmap[which(apply(otu6.heatmap,1,max)>=0.05),]
+  nrow(otu6.heatmap.f)
   
   # Plot otu heatmap
-  heatmap.otu6 <- pheatmap(sqrt(otu6.heatmap), color = pal, border_color = "black",
+  heatmap.otu6 <- pheatmap(sqrt(otu6.heatmap.f), color = pal, border_color = "black",
                            cluster_rows = F, cluster_cols = F, fontsize = 10,
                            gaps_col = c(13,22),
                            gaps_row = c(1,15))
+
+# Q7: How does MB compare after 14W smoke and/or DP2 exposure (b-diversity and heatmap)  
+  otu7.heatmap <- otu7
+  row.names(otu7.heatmap) <- env7$Label
+  otu7.heatmap <- as.data.frame(t(otu7.heatmap))
+  row.names(otu7.heatmap) == row.names(taxonomy)
+  row.names(otu7.heatmap) <- taxonomy$OTU.tax
+  otu7.heatmap$tax <- taxonomy$taxonomy
+  otu7.heatmap <- otu7.heatmap[order(otu7.heatmap$tax),]
+  otu7.heatmap <- subset(otu7.heatmap, select = -tax)
   
+  # Remove low count otus
+  nrow(otu7.heatmap)
+  otu7.heatmap.f <- otu7.heatmap[which(apply(otu7.heatmap,1,max)>=0.05),]
+  nrow(otu7.heatmap.f)
+  
+  # Plot otu heatmap
+  heatmap.otu7 <- pheatmap(sqrt(otu7.heatmap.f), color = pal, border_color = "black",
+                           cluster_rows = F, cluster_cols = F, fontsize = 10,
+                           gaps_col = c(13,22,30),
+                           gaps_row = c(1,15))
   

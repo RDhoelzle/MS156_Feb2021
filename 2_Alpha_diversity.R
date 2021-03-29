@@ -2,7 +2,7 @@
 
 source("Functions.R")
 
-# Q1: Is the MB sig dif amung smoker groups
+# Q1: Is the MB sig dif among smoker groups
 anova(lm(Sobs ~ factor(Group), data=env1))
 bargraph.CI(x.factor = Group, response = Sobs, legend=TRUE, data=env1)
 anova(lm(Chao1 ~ factor(Group), data=env1))
@@ -41,7 +41,7 @@ bargraph.CI(x.factor = Group, response = PD, legend=TRUE, data=env3)
 summary(aov(env3$Shan ~ env3$Group))
 cld(lsmeans(aov(env3$Shan ~ Group, data= env3), ~ Group, Letters = letters, adjust = "tukey"))
 
-# Q4: Is the MB sig dif amung non-smoker groups
+# Q4: Is the MB sig dif among non-smoker groups
 anova(lm(Sobs ~ factor(Group), data=env4))
 bargraph.CI(x.factor = Group, response = Sobs, legend=TRUE, data=env4)
 anova(lm(Chao1 ~ factor(Group), data=env4))
@@ -110,5 +110,11 @@ for(i in colnames(otu.taxa[,1:461])) {
 
 sink()
 sink(type = "message")
+
+otu.bargraph <- as.data.frame(otu.all[,c('Otu188', 'Otu22', 'Otu319')])
+otu.bargraph$Group <- env.all$Group
+otu.bargraph <- otu.bargraph %>% pivot_longer(cols = starts_with('Otu'), names_to = "Otu", values_to = 'value')
+
+bargraph.CI(otu.bargraph$Group, otu.bargraph$value*100, otu.bargraph$Otu, xlab = "Group", ylab = "RA (%)", legend = T)
 
 
