@@ -13,3 +13,5 @@
 # Q6: How does MB develop w/ smoke and DP2 exposure (b-diversity and heatmap)
 
 # Q7: How does MB compare after 14W smoke and/or DP2 exposure (b-diversity and heatmap)
+
+# Q8: Are the 14W smoke and 14W smoke + DP2 MBs significantly different?

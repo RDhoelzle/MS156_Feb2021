@@ -58,6 +58,14 @@ adonis(sqrt(otu7) ~ Group, data=env7, method='euc')
   rda7 <- rda(sqrt(otu7) ~ env7$Group)
     custom.plot.rda(ord = rda7, group = factor(env7$Group), 
                     title = "Q7", plottype = "n", sd.val = 10, scaling.val = 3)
+    
+# Q8: Are the 14W smoke and 14W smoke + DP2 MBs significantly different?
+adonis(sqrt(otu8) ~ Group, data=env8, method='euc')
+  pcoa8 <- pcoa(otu8)
+    custom.plot.pcoa(pcoa8,group = factor(env8$Group), plottype = "n", title = "Q8")
+#  rda8 <- rda(sqrt(otu8) ~ env8$Group)
+#    custom.plot.rda(ord = rda8, group = factor(env8$Group), 
+#                    title = "Q8", plottype = "n", sd.val = 10, scaling.val = 3)
 
 # Indicator analysis
 otu.indicators <- indval(otu.all, env.all$Group)

@@ -58,6 +58,21 @@ cld(lsmeans(aov(env4$Shan ~ Group, data= env4), ~ Group, Letters = letters, adju
 
 # Q6: How does MB develop w/ smoke and DP2 exposure (b-diversity and heatmap)
 
+# Q7: How does MB compare after 14W smoke and/or DP2 exposure (b-diversity and heatmap)
+
+# Q8: Are the 14W smoke and 14W smoke + DP2 MBs significantly different?
+anova(lm(Sobs ~ factor(Group), data=env8))
+bargraph.CI(x.factor = Group, response = Sobs, legend=TRUE, data=env8)
+anova(lm(Chao1 ~ factor(Group), data=env8))
+bargraph.CI(x.factor = Group, response = Chao1, legend=TRUE, data=env8)
+anova(lm(Shan ~ factor(Group), data=env8))
+bargraph.CI(x.factor = Group, response = Shan, legend=TRUE, data=env8)
+anova(lm(PD ~ factor(Group), data=env8))
+bargraph.CI(x.factor = Group, response = PD, legend=TRUE, data=env8)
+## Additional analyses
+summary(aov(env8$Shan ~ env8$Group))
+cld(lsmeans(aov(env8$Shan ~ Group, data= env8), ~ Group, Letters = letters, adjust = "tukey"))
+
 ## Additional analyses
 
 # All Groups in both time points
